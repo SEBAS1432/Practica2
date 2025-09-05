@@ -1,0 +1,799 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "PT Serif";
+    font-weight: bold;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+/*para guiarnos*/
+:root{
+    --color-fondo:  #efefef;
+    --color-letras: #202020;
+    --color-botones:#1c1b1b;
+    --color-titu:#595858c5;
+    
+}
+
+body{
+    background-color: var(--color-fondo);
+    margin: 0; 
+    padding: 0;
+}
+
+header .hamburger {
+  
+    display: none; /* Ocultamos inicialmente */
+}
+
+header{
+    background-color: #ffffff;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 4%;
+}
+.logo {
+    font-size: 2rem; /* Fuente raíz pr= 16 */
+    font-weight: bold;
+    font-family: "Matemasie";
+    transition: transform 0.3s;
+   
+}
+
+.logo:hover {
+    transform: scale(1.1); /* Escalar al 110% */
+    
+}
+
+header .opciones li a {
+    transition: transform 0.3s ease;
+    display: inline-block; 
+}
+
+header .opciones li a:hover {
+    transform:translateY(-3px);
+    border-bottom: 2px solid #000;
+}
+a{
+    color: var(--color-letras);
+}
+.opciones{
+    display: flex;
+    gap: 50px;  
+}
+
+.opciones li a{
+    letter-spacing: 0.10em; /*fuente padre */    
+    font-weight: lighter;
+}
+
+main {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Evita el desbordamiento de los elementos hijos */
+ }
+.foto-principal {
+    background-image: url('img/WAA-09.webp');
+    min-height: 800px; 
+    width: 100%; 
+    color: #fff;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-sizing: border-box; /* Asegura que el padding no aumente el tamaño total */       
+}
+.cont-port {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: 10px;
+}
+.foto-principal h1{
+    color: #ffffff;
+    font-size: 5rem;
+    font-weight: bold;
+    text-shadow: 4px 4px 8px rgba(2, 2, 2, 0.7); /* Sombra más visible */
+}
+.botones{
+    font-size: 1rem;
+    background-color:var(--color-botones);
+    padding: 10px 30px;
+    color: white;
+    letter-spacing: 0.10em; /*fuente padre */
+   box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5); /* Sombra negra con algo de difuminado */
+   transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease; 
+   animation: pulsar 1s ease-in-out infinite; /* Animación */
+   display: inline-block;
+}
+@keyframes pulsar {
+    0%, 100% {
+        transform: scale(1); /* Tamaño original */
+    }
+    50% {
+        transform: scale(1.1); /* Aumenta de tamaño */
+    }
+}
+.botones:hover {
+    transform: scale(1.1);
+    background-color: #ffffff; 
+    color: black;
+}
+
+section{
+    padding: 60px 2% 20px;
+    }
+
+.titulo{
+   display: flex;
+   justify-content: center;
+   letter-spacing: 0.10em; /*fuente padre */
+   color: var(--color-titu);
+   font-weight: lighter;
+   margin-bottom: 50px;
+}
+
+.polos-contenedor {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2.5rem;
+    margin-top: 5rem; 
+    justify-content: center; 
+    width: 100%; 
+}
+.categorias-contenedor {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2.5rem;
+    margin-top: 5rem; 
+    justify-content: center; 
+    width: 100%; 
+}
+
+.image-categoria {
+    position: relative; /* Hacer que el contenedor sea relativo para posicionar el texto */
+    overflow: hidden; /* Asegura que el texto no sobresalga */
+}
+
+.image-categoria img {
+    width: 100%; /* Asegura que la imagen ocupe todo el contenedor */
+    height: auto; /* Mantiene la relación de aspecto */
+    display: block; /* Elimina el espacio debajo de la imagen */
+}
+
+.image-categoria .hover {
+    position: absolute; /* Posicionar encima de la imagen original */
+    top: 0; /* Alinea al borde superior */
+    left: 0; /* Alinea al borde izquierdo */
+    width: 100%;
+    height: auto;
+    opacity: 0; /* Inicialmente oculta la imagen de hover */
+    transition: opacity 0.7s ease; /* Transición suave */
+}
+
+.image-categoria:hover .normal {
+    opacity: 0; /* Desvanece la imagen normal al hacer hover */
+}
+
+.image-categoria:hover .hover {
+    opacity: 1; /* Muestra la imagen de hover al hacer hover */
+}
+
+.texto {
+    position: absolute; /* Mantener el texto en posición absoluta */
+    bottom: 10px; /* Mueve el texto 10px desde la parte inferior */
+    left: 50%; /* Mueve el texto al medio horizontalmente */
+    transform: translateX(-50%); /* Ajusta la posición al centro horizontalmente */
+    color: white; /* Cambia el color del texto a blanco */
+    font-size: 2.0rem; /* Tamaño del texto */
+    background-color: rgba(243, 238, 238, 0); /* Fondo semi-transparente para mejorar la legibilidad */
+    padding: 10px; /* Espaciado alrededor del texto */
+    border-radius: 5px; /* Bordes redondeados */
+    text-align: center; /* Alineación centrada */
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease; 
+}
+
+
+.texto:hover {
+    transform: translate(-50%, -50%) scale(0.95); /* Mantiene la posición centrada y reduce el tamaño */
+    background-color: #ffffff; 
+    color: black;
+}
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 600px; /* Altura adecuada para las imágenes */
+    overflow: hidden; /* Oculta el desbordamiento */
+}
+
+.image-container img {
+    position: absolute; /* Alinea ambas imágenes en el mismo lugar */
+    top: 0;
+    left: 0;
+    width: 100%; /* Asegura que ocupen el 100% del contenedor */
+    height: 100%; /* Asegura que ocupen el 100% del contenedor */
+    object-fit: cover; /* Mantiene la relación de aspecto y recorta si es necesario */
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Transición suave para el cambio de opacidad y desplazamiento */
+}
+
+/* Oculta la imagen de hover por defecto */
+.image-container img.hover {
+    transform: translateY(-100%); /* Posición inicial fuera de la vista, arriba */
+    opacity: 0; /* Oculta la imagen de hover por defecto */
+}
+
+/* Cambios al hacer hover en el contenedor de la imagen */
+.image-container:hover img.normal {
+    transform: translateY(100%); /* Desplaza hacia abajo la imagen normal */
+    opacity: 0; /* Oculta la imagen normal al hacer hover */
+}
+
+.image-container:hover img.hover {
+      transform: translateY(0); /* Baja la imagen hover desde arriba */
+    opacity: 1; /* Muestra la imagen de hover al hacer hover */
+}
+
+/* Estilo para los precios */
+.precio {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 10px; /* Espacio entre la imagen y el precio */
+}
+.polos {
+    display: flex; /* Usar Flexbox para centrar el contenido */
+    flex-direction: column; /* Organiza los elementos en una columna */
+    text-align: center; /* Alinea el texto al centro */  
+}
+
+.polos img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 2px;
+}
+
+.Categorias{
+    display: flex; /* Usar Flexbox para centrar el contenido */
+    flex-direction: column; /* Organiza los elementos en una columna */
+    text-align: center; /* Alinea el texto al centro */  
+
+}
+
+.Categorias img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 2px;
+}
+.polos  p{
+    font-size: 2rem;
+    margin: 20px auto; 
+    padding: 20px; 
+    background-color: #f0f0f0; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+.imv-boto{
+ 
+    padding: 50px;
+    text-align: center;
+
+}
+.bot{
+    font-size: 1rem;
+    background-color:var(--color-botones);
+    padding: 10px 30px;
+    color: white;
+    letter-spacing: 0.10em; /*fuente padre */
+   box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5); /* Sombra negra con algo de difuminado */
+   transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease; 
+   display: inline-block;
+}
+.bot.bot:hover {
+    transform: scale(1.1);
+    background-color: #ffffff; 
+    color: black;
+}
+
+.flechaarriba {
+    position: fixed;
+    right: 20px;    
+    bottom: 150px; 
+    display: none; /* Inicialmente oculta */
+    cursor: pointer;
+    z-index: 1000;  
+
+    
+}
+
+/* Estilos para el footer */
+footer {
+    background-color: var(--color-botones); /* Fondo oscuro */
+    padding: 50px 0;
+    color: #fff; /* Letras blancas */
+    font-family: 'PT Serif', serif;
+}
+
+footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer .row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+footer .footer-col {
+    width: 22%; /* Ancho ajustado para cada columna */
+    margin-bottom: 30px;
+}
+
+footer .footer-col h4 {
+    font-size: 18px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    font-weight: bold;
+    border-bottom: 2px solid #fff; /* Línea debajo del título */
+    padding-bottom: 5px;
+}
+
+footer .footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer .footer-col ul li {
+    margin-bottom: 10px;
+}
+
+footer .footer-col ul li a {
+    color: #dcdcdc; /* Color claro para los enlaces */
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+footer .footer-col ul li a:hover {
+    color: #105bd5; /* Enlaces blancos al pasar el ratón */
+}
+
+footer .footer-col .social-links ul {
+    display: flex;
+    gap: 20px;
+}
+
+footer .footer-col .social-links ul li {
+    list-style: none;
+}
+
+footer .footer-col .social-links ul li a img {
+    width: 30px; /* Ajuste del tamaño de los iconos sociales */
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+footer .footer-col .social-links ul li a img:hover {
+    transform: scale(1.2); /* Efecto de zoom en los iconos al pasar el ratón */
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(104, 91, 91, 0.5); 
+}
+
+.modal-content {
+    background-color: #fff;
+    color: #000;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.modal-content p {
+    margin-bottom: 1.5em;
+}
+
+.modal-content ul,
+.modal-content ol {
+    margin-bottom: 1.5em;
+    padding-left: 20px;
+}
+
+.modal-content h2, .modal-content h3 {
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+#modal-reclamaciones form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#modal-reclamaciones input,
+#modal-reclamaciones textarea {
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#modal-reclamaciones button {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#modal-reclamaciones button:hover {
+    background-color: #45a049;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+}
+@media (max-width: 768px) {
+    header .opciones {
+        display: none;
+        flex-direction: column;
+        width: 20%; /* Más ancho para caber mejor en pantallas pequeñas */
+        padding: 0.5rem; /* Espacio interno */
+        background-color: #ffffff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.729); /* Sombra */
+        border-radius: 8px; /* Bordes redondeados */
+        position: absolute;
+        align-items: center; /* Centra las opciones verticalmente */
+        top: 50px;
+        right: 10px; /* No pegado al borde */
+        z-index: 1000;
+    }
+    header .opciones a {
+        display: flex; /* Flexbox para centrar el texto */
+        justify-content: center; /* Centrar horizontalmente */
+        align-items: center; /* Centrar verticalmente */
+        text-decoration: none; /* Sin subrayados */
+        color: #333; /* Color legible */
+        border-radius: 4px; /* Bordes suaves */
+    }
+    .opciones{
+        display: flex;
+        gap: 15px;  
+    }
+    .logo{
+    font-size: 1.5rem; /*fuente raiz pr= 16*/
+    font-weight: bold;
+    font-family: "Matemasie";  
+}
+
+    .foto-principal h1 {
+        font-size: 3rem;
+    }
+    .foto-principal {
+        min-height: 400px;
+        width: 100%;
+        color: #fff;
+        display: flex;
+        align-items: center; /* Centra verticalmente el contenido */
+        background-size: cover; /* Asegura que la imagen de fondo cubra todo el contenedor */
+        background-position: center; /* Centra la imagen de fondo */
+    }
+    .botones {
+        font-size: 0.5rem;
+    }
+    
+    .polos-contenedor {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Mantiene las columnas flexibles */
+        gap: 0.5rem; /* Espacio entre los elementos */
+        max-width: 800px; /* Limita el ancho máximo del contenedor */
+        margin: 0 auto; /* Centra el contenedor */
+    }
+    
+    .image-container {
+        height: 500px; /* Ajusta la altura a un tamaño más compacto */
+    }
+    .polos img {
+        height: 100%; /* Ocupa toda la altura del contenedor */
+        object-fit: cover; /* Mantiene la proporción de la imagen */
+       
+    }
+   
+    
+    footer .footer-col {
+        width: 100%;
+        text-align: center;
+    }
+    
+    footer .row {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+@media (max-width: 944px) {
+    header .opciones {
+        display: none;
+        flex-direction: column;
+        width: 20%; /* Más ancho para caber mejor en pantallas pequeñas */
+        padding: 0.5rem; /* Espacio interno */
+        background-color: #ffffff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.729); /* Sombra */
+        border-radius: 8px; /* Bordes redondeados */
+        position: absolute;
+        align-items: center; /* Centra las opciones verticalmente */
+        top: 50px;
+        right: 10px; /* No pegado al borde */
+        z-index: 1000;
+    }
+    header .opciones a {
+        display: flex; /* Flexbox para centrar el texto */
+        justify-content: center; /* Centrar horizontalmente */
+        align-items: center; /* Centrar verticalmente */
+        text-decoration: none; /* Sin subrayados */
+        color: #333; /* Color legible */
+        border-radius: 4px; /* Bordes suaves */
+    }
+    .opciones{
+        display: flex;
+        gap: 15px;  
+    }
+    .logo{
+    font-size: 1.5rem; /*fuente raiz pr= 16*/
+    font-weight: bold;
+    font-family: "Matemasie";  
+}
+header .hamburger {
+    display: block; /* Mostramos la hamburguesa */
+    cursor: pointer;
+}
+    .foto-principal h1 {
+        font-size: 3rem;
+    }
+    .foto-principal {
+        min-height: 400px;
+        width: 100%;
+        color: #fff;
+        display: flex;
+        align-items: center; /* Centra verticalmente el contenido */
+        background-size: cover; /* Asegura que la imagen de fondo cubra todo el contenedor */
+        background-position: center; /* Centra la imagen de fondo */
+    }
+    .botones {
+        font-size: 0.5rem;
+    }
+    
+    .polos-contenedor {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Mantiene las columnas flexibles */
+        gap: 0.5rem; /* Espacio entre los elementos */
+        max-width: 800px; /* Limita el ancho máximo del contenedor */
+        margin: 0 auto; /* Centra el contenedor */
+    }
+    .categorias-contenedor{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Mantiene las columnas flexibles */
+        gap: 0.5rem; /* Espacio entre los elementos */
+        max-width: 800px; /* Limita el ancho máximo del contenedor */
+        margin: 0 auto; /* Centra el contenedor */
+    }
+    
+    .image-container {
+        height: 500px; /* Ajusta la altura a un tamaño más compacto */
+    }
+    .image-categoria{
+        height: 500px; /* Ajusta la altura a un tamaño más compacto */
+    }
+    .polos img {
+        height: 100%; /* Ocupa toda la altura del contenedor */
+        object-fit: cover; /* Mantiene la proporción de la imagen */
+       
+    }
+    .categoria img {
+        height: 100%; /* Ocupa toda la altura del contenedor */
+        object-fit: cover; /* Mantiene la proporción de la imagen */
+       
+    }
+    
+    footer .footer-col {
+        width: 100%;
+        text-align: center;
+    }
+    
+    footer .row {
+        flex-direction: column;
+        align-items: center;
+    }
+    .social-links ul{
+        justify-content: center;
+    }
+
+    .textofinal{
+        text-align: center;
+    }
+}
+
+@media (max-width: 748px) {
+    header .opciones {
+        display: none;
+        flex-direction: column;
+        width: 20%; /* Más ancho para caber mejor en pantallas pequeñas */
+        padding: 0.5rem; /* Espacio interno */
+        background-color: #ffffff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.729); /* Sombra */
+        border-radius: 8px; /* Bordes redondeados */
+        position: absolute;
+        align-items: center; /* Centra las opciones verticalmente */
+        top: 50px;
+        right: 10px; /* No pegado al borde */
+        z-index: 1000;
+    }
+    header .opciones a {
+        display: flex; /* Flexbox para centrar el texto */
+        justify-content: center; /* Centrar horizontalmente */
+        align-items: center; /* Centrar verticalmente */
+        text-decoration: none; /* Sin subrayados */
+        color: #333; /* Color legible */
+        border-radius: 4px; /* Bordes suaves */
+    }
+    .opciones{
+        display: flex;
+        gap: 15px;  
+    }
+    .opciones{
+        display: flex;
+        gap: 15px;  
+    }
+    header .hamburger {
+        display: block; /* Mostramos la hamburguesa */
+    }
+    .logo {
+        font-size: 1rem; /* Tamaño de fuente para el logo */
+        font-weight: bold;
+        font-family: "Matemasie";  
+    }
+
+  
+    header .opciones li {
+        margin: 0; /* Eliminar márgenes */
+        padding: 0; /* Eliminar padding */
+    }
+
+    .foto-principal h1 {
+        font-size: 2rem; /* Tamaño del texto del encabezado */
+    }
+
+    .foto-principal {
+        min-height: 300px; /* Altura mínima de la imagen principal */
+        width: 100%; /* Ancho completo */
+        color: #fff; /* Color del texto */
+        display: flex; /* Flexbox para centrar el contenido */
+        align-items: center; /* Centra verticalmente el contenido */
+        background-size: cover; /* Asegura que la imagen de fondo cubra todo el contenedor */
+        background-position: center; /* Centra la imagen de fondo */
+    }
+
+    .botones {
+        font-size: 0.5rem; /* Tamaño de fuente para los botones */
+    }
+    .polos-contenedor {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Mantiene las columnas flexibles */
+        gap: 0.5rem; /* Espacio entre los elementos */
+        max-width: 500px; /* Limita el ancho máximo del contenedor */
+        margin: 0 auto; /* Centra el contenedor */
+    }
+    .categorias-contenedor{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Mantiene las columnas flexibles */
+        gap: 0.5rem; /* Espacio entre los elementos */
+        max-width: 500px; /* Limita el ancho máximo del contenedor */
+        margin: 0 auto; /* Centra el contenedor */
+    }
+    .image-categoria{
+        height: 300px; /* Ajusta la altura a un tamaño más compacto */
+    }
+    
+    .image-container {
+        height: 300px; /* Ajusta la altura a un tamaño más compacto */
+    }
+    .categoria img {
+        height: 100%; /* Ocupa toda la altura del contenedor */
+        object-fit: cover; /* Mantiene la proporción de la imagen */ 
+    }
+    .polos img {
+        height: 100%; /* Ocupa toda la altura del contenedor */
+        object-fit: cover; /* Mantiene la proporción de la imagen */ 
+    }
+    .precio {
+        font-size: 0.8rem; /* Ajusta el tamaño de fuente que desees */
+        color: #000; /* Cambia el color si es necesario */
+        margin: 0; /* Elimina márgenes */
+        padding: 5px 0; /* Espaciado opcional */
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1); /* Tamaño normal */
+    }
+    50% {
+        transform: scale(1.2); /* Pequeño zoom */
+    }
+   100% {
+        transform: scale(1); /* Volver al tamaño normal */
+    }
+}
+
+.boton_wssp {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 999;
+    animation: pulse 1.5s infinite; /* Aplicar la animación */
+    transition: transform 0.3s ease-in-out; /* Suavizar la transición */
+}
+
+.boton_wssp a img:first-child {
+    display: block;
+}
+
+.boton_wssp a img:last-child {
+    display: none;
+}
+
+.boton_wssp a:hover img:first-child {
+    display: none;
+}
+
+.boton_wssp a:hover img:last-child {
+    display: block;
+}
+
+.audiofondo {
+    display: flex;               /* Usar flexbox */
+    justify-content: center;     /* Centra horizontalmente */
+    align-items: center;         /* Centra verticalmente */
+
+}
+
+audio {
+    max-width: 100%;            /* Asegura que no sobrepase el contenedor */
+}
