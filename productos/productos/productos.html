@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Ropa</title>
+    <link rel="stylesheet" href="stylep.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Matemasie&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <a href="../index.html" class="logo">Weoks</a>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <ul class="opciones"  id="opciones">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="accesorios.html">Accesorios</a></li>
+            <li><a href="#">Ofertas</a></li>
+            <li><a href="../Acerca/acerca.html">Nosotros</a></li>
+            <li><a href="../IniciarSeccion/iniciar.html"><img src="../img/usuario.png" alt="Usuario"></a></li>
+            <li><a href="#" id="carrito">
+                <img src="../img/carrito-de-compras.png" alt="Carrito de Compras">
+                <span id="contadorCarrito">0</span> <!-- Contador de productos en el carrito -->
+            </a></li>
+        </ul>
+    </header>
+    <!-- Cuerpo -->
+    <main>
+        <section class="titulo">
+            <h1>PRODUCTOS</h1>
+           
+        </section>
+       
+  <!-- Contenedor para la línea horizontal -->
+
+
+    <div class="linea-container">
+        <hr class="linea-horizontal">
+    </div>
+        <div class="content-container">
+            <section class="lista-opciones">
+                <h1>Tipos de Productos</h1>
+                <ul class="lista">
+                    <li><a href="#Camisas">Camisas</a></li>
+                    <li><a href="#Casacas">Casacas</a></li>
+                    <li><a href="#Pantalones">Pantalones</a></li>
+                    <li><a href="#Poleras">Poleras</a></li>
+                    <li><a href="#Polos">Polos</a></li>
+                    <button id="resetCarrito">Resetear Carrito</button>
+                </ul>
+            </section>
+            <section class="cont-todo">
+                <section class="Camisas" id="Camisas">
+                    <div class="Camisas-contenedor">
+                        <a href="#" class="Camisa">
+                            <div class="image-container">
+                                <img src="../img/camisa1-adelante.jpg" alt="Camisas1" class="normal">
+                                <img src="../img/camisa1-costado.jpg" alt="Polo1 Cambio" class="hover"> <!-- Imagen de hover -->
+                            </div>
+                            <h2>Camisa Sport Negro con Flamas</h2>
+                            <p class="precio">$/. 18</p>
+                            <span class="button botonComprar">Comprar</span>
+                        </a>
+                        <a href="#" class="Camisa">
+                            <div class="image-container">
+                                <img src="../img/camisa2-adelante.webp" class="normal">
+                                <img src="../img/f2.webp" alt="Polo2 Cambio" class="hover"> <!-- Imagen de hover -->
+                            </div>
+                            <h2>Camisa Sport Blanca</h2>
+                            <p class="precio">$/. 10</p>
+                            <span class="button botonComprar">Comprar</span>
+                        </a>
+                        <a href="#" class="Camisa">
+                            <div class="image-container">
+                                <img src="../img/camisa3-adelante.webp" class="normal">
+                                <img src="../img/f3.webp" alt="Polo3 Cambio" class="hover"> <!-- Imagen de hover -->
+                            </div>
+                            <h2>Camisa Sport Negro</h2>
+                            <p class="precio">$/. 45</p>
+                            <span class="button botonComprar">Comprar</span>
+                        </a>
+                    </div>  
+                </section>
+                
+                <section class="Casacas" id="Casacas">
+                    <div class="Casacas-contenedor">
+                        <a href="#" class="Casaca">
+                            <div class="image-container">
+                                <img src="../img/casaca1-adelante.webp" alt="Casaca1" class="normal">
+                                <img src="../img/c1.webp" alt="casaca1 Cambio" class="hover"> <!-- Imagen de hover -->
+                            </div>
+                            <h2>Casacas de Vestir Ploma</h2>
+                            <p class="precio">$/. 25</p>
+                            <span class="button botonComprar">Comprar</span>
+                        </a>
+                        <a href="#" class="Casaca">
+                            <div class="image-container">
+                                <img src="../img/casaca2-adelante.webp" alt="Casaca2" class="normal">
+                                <img src="../img/c2.webp" alt="casaca2 Cambio" class="hover"> <!-- Imagen de hover -->
+                            </div>
+                            <h2>Casacas de Vestir Negra</h2>
+                            <p class="precio">$/. 50</p>
+                            <span class="button botonComprar">Comprar</span>
+                        </a>
+                        <a href="#" class="Casaca">
+                            <div class="image-container">
+                                <img src="../img/casaca3-adelante.jpg" alt="Casaca3" class="normal">
+                                <img src="../img/c3.webp" alt="casaca3 Cambio" class="hover"> <!-- Imagen de hover -->
+                            </div>
+                            <h2>Casacas de Vestir Roja</h2>
+                            <p class="precio">$/. 45</p>
+                            <span class="button botonComprar">Comprar</span>
+                        </a>
+                    </div>  
+                </section>
+            
+                <section class="Pantalones" id="Pantalones">
+                    <div class="Pantalones-contenedor">
+                        <a href="#" class="Pantalon">
+                            <div class="image-container">
+                                <img src="../img/pantalon1-atras.webp" alt="Pantalones1" class="normal">
+                                <img src="../img/p1.webp" alt="Pantalon1 Cambio" class="hover"> <!-- Imagen de hover -->
+                            </div>
+                            <h2>Pantalones de Vestir Negro</h2>
+                            <p class="precio">$/. 25</p>
+                            <span class="button botonComprar">Comprar</span>
+                        </a>
+                        <a href="#" class="Pantalon">
+                            <div class="image-container">
+                                <img src="../img/pantalon2-adelante.webp" alt="Pantalones2" class="normal">
+                                <img src="../img/p2.webp" alt="Pantalon2 Cambio" class="hover"> <!-- Imagen de hover -->
+                            </div>
+                            <h2>Pantalones de Vestir Marron</h2>
+                            <p class="precio">$/. 50</p>
+                            <span class="button botonComprar">Comprar</span>
+                        </a>
+                        <a href="#" class="Pantalon">
+                            <div class="image-container">
+                                <img src="../img/pantalon3-adelante.webp" alt="Pantalones3" class="normal">
+                                <img src="../img/p3.webp" alt="Pantalon3 Cambio" class="hover"> <!-- Imagen de hover -->
+                            </div>
+                            <h2>Pantalones de Vestir Plomo</h2>
+                            <p class="precio">$/. 45</p>
+                            <span class="button botonComprar">Comprar</span>
+                        </a>
+                    </div>  
+                </section>
+            
+                <section class="Poleras" id="Poleras">
+                    <div class="Poleras-contenedor">
+                        <a href="#" class="Polera">
+                            <div class="image-container">
+                                <img src="../img/polera1-adelante.webp" alt="Poleras1" class="normal">
+                                <img src="../img/po1.webp" alt="Polera1 Cambio" class="hover"> <!-- Imagen de hover -->
+                            </div>
+                            <h2>Polera Gris</h2>
+                            <p class="precio">$/. 20</p>
+                            <span class="button botonComprar">Comprar</span>
+                        </a>
+                        <a href="#" class="Polera">
+                            <div class="image-container">
+                                <img src="../img/polera2-adelante.webp" alt="Poleras2" class="normal">
+                                <img src="../img/po2.webp" alt="Polera2 Cambio" class="hover"> <!-- Imagen de hover -->
+                            </div>
+                            <h2>Polera Negra</h2>
+                            <p class="precio">$/. 60</p>
+                            <span class="button botonComprar">Comprar</span>
+                        </a>
+                        <a href="#" class="Polera">
+                            <div class="image-container">
+                                <img src="../img/polera3-adelante.webp" alt="Poleras3" class="normal">
+                                <img src="../img/po3.webp" alt="Polera3 Cambio" class="hover"> <!-- Imagen de hover -->
+                            </div>
+                            <h2>Polera Negra con Diseño</h2>
+                            <p class="precio">$/. 85</p>
+                            <span class="button botonComprar">Comprar</span>
+                        </a>
+                    </div>  
+                </section>
+            
+                <section class="Polos" id="Polos">
+                    <div class="Polos-contenedor">
+                        <a href="#" class="Polo">
+                            <div class="image-container">
+                                <img src="../img/polo1-adelante.webp" alt="Polos1" class="normal">
+                                <img src="../img/pol1.webp" alt="Polo1 Cambio" class="hover"> <!-- Imagen de hover -->
+                            </div>
+                            <h2>Polo Negro</h2>
+                            <p class="precio">$/. 20</p>
+                            <span class="button botonComprar">Comprar</span>
+                        </a>
+                        <a href="#" class="Polo">
+                            <div class="image-container">
+                                <img src="../img/mangalarga1-adelante.webp" alt="Polos2" class="normal">
+                                <img src="../img/poo33.webp" alt="Polo2 Cambio" class="hover"> <!-- Imagen de hover -->
+                            </div>
+                            <h2>Polo Verde</h2>
+                            <p class="precio">$/. 60</p>
+                            <span class="button botonComprar">Comprar</span>
+                        </a>
+                        <a href="#" class="Polo">
+                            <div class="image-container">
+                                <img src="../img/mangalarga2-adelante.webp" alt="Polos3" class="normal">
+                                <img src="../img/pol3.webp" alt="Polo3 Cambio" class="hover"> <!-- Imagen de hover -->
+                            </div>
+                            <h2>Polo Blanco</h2>
+                            <p class="precio">$/. 85</p>
+                            <span class="button botonComprar">Comprar</span>
+                        </a>
+                    </div>  
+                </section>
+            </section>
+   
+        </div>
+        <div class="flechaarriba" id="flechaarriba">
+            <img src="../img/flecha-arriba.png" alt="Volver Arriba">
+        </div>
+        <div class="boton_wssp">
+            <a href="#">
+                <img src="../img/whatsapp (1).png">
+                <img src="../img/whatsapp.png">      
+            </a>
+        </div>
+    </main>
+    <!-- Pie de página -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>SERVICIO AL CLIENTE</h4>
+                    <ul>
+                      <li><a href="#" id="btn-retiro">Retiro en Tienda</a></li>
+                      <li><a href="#" id="btn-cambios">Cambios y Devoluciones</a></li>
+                      <li><a href="#" id="btn-terminos">Términos y Condiciones</a></li>
+                      <li><a href="#" id="btn-reclamaciones">Libro de Reclamaciones</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>CONTÁCTANOS</h4>
+                    <ul>
+                      <li><a href="mailto:woeks369@gmail.com">woeks369@gmail.com</a></li>
+                        <li><a href="#">[L-V: 9:00AM - 6:00PM]</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                  <h4>TIENDAS</h4>
+                  <ul>
+                      <!-- Este enlace abrirá el modal de tiendas -->
+                      <li><a href="#" id="btn-store">Encuentra tu Tienda más cercana</a></li>
+                  </ul>
+              </div>
+              
+                <div class="footer-col">
+                    <h4>REDES SOCIALES</h4>
+                    <div class="social-links">
+                     <ul>
+                      <li><a href="https://www.facebook.com/" target="_blank"><img src="../img/facebook.png" alt="Facebook"></a></li>
+                      <li><a href="https://www.instagram.com/" target="_blank"><img src="../img/instagram.png" alt="Instagram"></a></li>
+                      <li><a href="https://x.com/home?lang=es" target="_blank"><img src="../img/twitter.png" alt="Twitter"></a></li>        
+                     </ul>
+                    </div>
+            </div>
+         
+        </div>
+        <div >
+         <p class="textofinal">&copy; 2024 Weoks&#36;. Todos los derechos reservados.</p>
+        </div>
+      <!-- Modales -->
+      <div id="modal-retiro" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modal-retiro">&times;</span>
+            <h2>Retiro en Tienda</h2>
+            <p>¡Gracias por elegir nuestra tienda! Ahora puedes realizar tus compras en línea y recogerlas directamente en nuestras tiendas ubicadas en Lima. A continuación, te explicamos cómo funciona el proceso de retiro en tienda:</p>
+            <br>
+            <ul>
+                <li><strong>1. Realiza tu pedido en línea:</strong> Explora nuestra colección de ropa para hombre y selecciona tus productos favoritos.</li>
+                <br>
+                <li><strong>2. Elige la opción "Retiro en Tienda":</strong> Al momento de realizar el pago, selecciona esta opción y elige la tienda más cercana a tu ubicación.</li>
+                <br>
+                <li><strong>3. Confirmación del pedido:</strong> Recibirás un correo electrónico con los detalles de tu compra y el tiempo estimado para que tu pedido esté listo.</li>
+                <br>
+                <li><strong>4. Retira tu pedido:</strong> Visítanos en la tienda seleccionada y presenta tu documento de identidad junto con el número de pedido. Nuestro equipo estará listo para entregarte tus productos.</li>
+            </ul>
+            <br>
+            <p><strong>Horarios de atención:</strong> Lunes a sábado de 9:00 AM a 8:00 PM.</p>
+            <br>
+            <p><strong>Tiendas disponibles:</strong></p>
+            <br>
+            <ul>
+                <li>Jirón de la Unión 123, Centro de Lima</li>
+                <br>
+                <li>Av. La Molina 456, La Molina</li>
+                <br>
+                <li>Centro Comercial Jockey Plaza, Santiago de Surco</li>
+            </ul>
+            <br>
+            <p>Si tienes alguna consulta, no dudes en escribirnos a <a href="mailto:woeks369@gmail.com">woeks369@gmail.com</a>.</p>
+        </div>
+    </div>
+    
+    <div id="modal-cambios" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modal-cambios">&times;</span>
+            <h2>Cambios y Devoluciones</h2>
+            <p>En nuestra tienda, queremos asegurarnos de que estés 100% satisfecho con tu compra. Por eso, te ofrecemos una política flexible de cambios y devoluciones. A continuación, te explicamos cómo funciona:</p>
+            <h3>Política de Cambios</h3>
+            <ul>
+                <li><strong>Plazo:</strong> Puedes solicitar el cambio de tu producto dentro de los primeros 15 días calendario después de la fecha de compra.</li>
+                <li><strong>Condiciones:</strong> El producto debe estar en perfectas condiciones, sin señales de uso, con las etiquetas originales y en su empaque original.</li>
+                <li><strong>Proceso:</strong> 
+                    <ol>
+                        <li>Visita nuestra tienda más cercana.</li>
+                        <li>Presenta tu boleta o factura de compra.</li>
+                        <li>Selecciona el nuevo producto que deseas adquirir. Si hay una diferencia de precio, se deberá abonar o se reembolsará el saldo correspondiente.</li>
+                    </ol>
+                </li>
+            </ul>
+            <h3>Política de Devoluciones</h3>
+            <ul>
+                <li><strong>Plazo:</strong> Las devoluciones son aceptadas dentro de los primeros 7 días calendario después de la fecha de compra.</li>
+                <li><strong>Condiciones:</strong> El producto debe cumplir con las mismas condiciones de los cambios: sin uso, con etiquetas y empaque original.</li>
+                <li><strong>Reembolso:</strong> 
+                    <ul>
+                        <li>Si pagaste con tarjeta, el monto será reembolsado en un plazo de 7 días hábiles.</li>
+                        <li>Para pagos en efectivo, se realizará el reembolso directamente en la tienda.</li>
+                    </ul>
+                </li>
+            </ul>
+            <p><strong>Excepciones:</strong> Por razones de higiene, no se aceptan cambios ni devoluciones en productos como ropa interior, calcetines o mascarillas.</p>
+            <h3>Tiendas Disponibles para Cambios y Devoluciones</h3>
+            <ul>
+                <li>Jirón de la Unión 123, Centro de Lima</li>
+                <li>Av. La Molina 456, La Molina</li>
+                <li>Centro Comercial Jockey Plaza, Santiago de Surco</li>
+            </ul>
+            <p>Para consultas adicionales, no dudes en escribirnos a <a href="mailto:woeks369@gmail.com">woeks369@gmail.com</a>.</p>
+        </div>
+    </div>
+    <div id="modal-terminos" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modal-terminos">&times;</span>
+            <h2>Términos y Condiciones</h2>
+            <p>Estos Términos y Condiciones regulan el acceso y uso de nuestro sitio web y los servicios proporcionados por nuestra tienda de ropa masculina ubicada en Lima, Perú. Al utilizar este sitio, aceptas cumplir con las siguientes disposiciones:</p>
+            
+            <h3>1. Generalidades</h3>
+            <p>Los productos ofrecidos a través de nuestra página están destinados exclusivamente para uso personal y no comercial. Nos reservamos el derecho de modificar estos Términos y Condiciones en cualquier momento sin previo aviso. Te recomendamos revisarlos regularmente.</p>
+            
+            <h3>2. Condiciones de Compra</h3>
+            <ul>
+                <li><strong>Disponibilidad:</strong> Todos los productos están sujetos a disponibilidad. En caso de falta de stock, se notificará al cliente y se ofrecerá una alternativa o reembolso.</li>
+                <li><strong>Precios:</strong> Los precios incluyen impuestos aplicables y están expresados en soles peruanos (PEN).</li>
+                <li><strong>Métodos de Pago:</strong> Aceptamos tarjetas de crédito, débito, transferencias bancarias y pagos en efectivo al momento del retiro en tienda.</li>
+            </ul>
+            
+            <h3>3. Envíos y Entregas</h3>
+            <p>Los pedidos realizados a través de nuestra página pueden ser retirados en nuestras tiendas o enviados a domicilio dentro del territorio nacional. Los tiempos de entrega varían según la ubicación y serán informados al momento de la compra.</p>
+            
+            <h3>4. Cambios y Devoluciones</h3>
+            <p>Te invitamos a consultar nuestra política de cambios y devolucioneS para más detalles sobre las condiciones aplicables.</p>
+
+            
+            <h3>5. Protección de Datos</h3>
+            <p>Nos comprometemos a proteger tu privacidad. Los datos personales proporcionados serán utilizados exclusivamente para procesar pedidos, garantizar entregas y enviar información sobre promociones si el cliente lo solicita. Para más detalles, consulta nuestra Política de Privacidad.</p>
+            
+            <h3>6. Uso del Sitio Web</h3>
+            <p>Está estrictamente prohibido:</p>
+            <ul>
+                <li>Reproducir, distribuir o modificar cualquier contenido del sitio sin autorización previa.</li>
+                <li>Utilizar el sitio para fines fraudulentos o ilícitos.</li>
+            </ul>
+            
+            <h3>7. Atención al Cliente</h3>
+            <p>Si tienes preguntas o necesitas asistencia, contáctanos a través de <a href="mailto:woeks369@gmail.com">woeks369@gmail.com</a> o llama a nuestro servicio al cliente (L-V: 9:00 AM - 6:00 PM).</p>
+            
+            <p>El uso de este sitio web implica la aceptación de estos Términos y Condiciones. Gracias por confiar en nosotros.</p>
+        </div>
+    </div>
+    
+    <div id="modal-reclamaciones" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modal-reclamaciones">&times;</span>
+            <h2>Libro de Reclamaciones</h2>
+            <p>Si tienes alguna sugerencia, queja o reclamo, por favor, completa el formulario a continuación y nos pondremos en contacto contigo.</p>
+            
+            <!-- Formulario de Reclamaciones -->
+            <form id="form-reclamaciones">
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre completo">
+    
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required placeholder="Tu correo electrónico">
+    
+                <label for="reclamo">Tu Reclamo/Sugerencia:</label>
+                <textarea id="reclamo" name="reclamo" rows="4" required placeholder="Escribe tu reclamo o sugerencia"></textarea>
+    
+                <button type="submit">Enviar Reclamación</button>
+            </form>
+    
+            <p>Recibirás una respuesta a tu solicitud dentro de los próximos 2-3 días hábiles.</p>
+        </div>
+    </div>
+
+    
+   <!-- Modal de Tiendas -->
+<div id="store-modal" class="modal">
+    <div class="modal-content">
+        <!-- Asegúrate de agregar el atributo data-modal -->
+        <span class="close" data-modal="store-modal">&times;</span>
+        <h2>Dirección de nuestras Tiendas</h2>
+        <div id="store-addresses">
+            <p><strong>Tienda 1:</strong> Av. Pardo y Aliaga 123, San Isidro, Lima, Perú</p>
+            <p><strong>Tienda 2:</strong> Calle de la Paz 456, Miraflores, Lima, Perú</p>
+            <p><strong>Tienda 3:</strong> Av. Javier Prado Oeste 789, San Borja, Lima, Perú</p>
+            <p><strong>Tienda 4:</strong> Calle las Palmas 321, Surco, Lima, Perú</p>
+        </div>
+    </div>
+</div>
+   </footer>
+   <script src="p.js"></script>
+   <script src="../sricpt.js"></script>
+</body>
+</html>
