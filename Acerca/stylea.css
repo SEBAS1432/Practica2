@@ -1,0 +1,600 @@
+/* Estilos globales */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'PT Serif', serif;
+    font-weight: bold;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+/* Variables de color */
+:root {
+    --color-fondo: #efefef;
+    --color-letras: #202020;
+    --color-botones: #1c1b1b;
+    --color-titu: #595858c5;
+}
+
+/* Estilos del body */
+body {
+    background-color: var(--color-fondo);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Estilos del header */
+header {
+    background-color: #ffffff;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 4%;
+}
+header .hamburger {
+  
+    display: none; /* Ocultamos inicialmente */
+}
+
+.logo {
+    font-size: 2rem; /* Fuente raíz pr= 16 */
+    font-weight: bold;
+    font-family: "Matemasie";
+    transition: transform 0.3s;
+   
+}
+
+.logo:hover {
+    transform: scale(1.1); /* Escalar al 110% */
+    
+}
+
+header .opciones li a {
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+header .opciones li a:hover {
+    transform: translateY(-3px);
+    border-bottom: 2px solid #000;
+}
+
+a {
+    color: var(--color-letras);
+}
+
+.opciones {
+    display: flex;
+    gap: 50px;
+}
+
+.opciones li a {
+    letter-spacing: 0.10em; /* Espaciado de letras */
+    font-weight: lighter;
+}
+
+/* Estilos del main */
+main {
+    padding-top: 120px; /* Ajusta este valor a la altura total del header */
+}
+
+/* Estilos de encabezados */
+h1,h2 {
+    text-align: center;
+    font-family: "PT Serif";
+    text-decoration: underline;
+    color: #2e4053;
+    font-style: italic;
+}
+
+/* Estilos del contenido sobre nosotros */
+.contenido-nosotros {
+    display: flex;
+}
+
+.blog {
+    font-family: "PT Serif";
+    font-weight: normal;
+    text-align: justify;
+    font-size: 19px;
+    line-height: 45px;
+    color: #7f8c8d;
+    border: 2px solid #dcdcdc;
+    padding: 20px;
+    margin: 20px 150px;
+    border-radius: 0px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos de los videos del blog */
+.videoblog {
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 290px;
+}
+
+.videoblog video {
+    width: auto;
+    height: 6in;
+    border-radius: 9px;
+}
+
+/* Estilos para el footer */
+footer {
+    background-color: var(--color-botones); /* Fondo oscuro */
+    padding: 50px 0;
+    color: #fff; /* Letras blancas */
+    font-family: 'PT Serif', serif;
+    margin-top: auto;
+}
+
+footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer .row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+footer .footer-col {
+    width: 22%; /* Ancho ajustado para cada columna */
+    margin-bottom: 30px;
+}
+
+footer .footer-col h4 {
+    font-size: 18px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    font-weight: bold;
+    border-bottom: 2px solid #fff; /* Línea debajo del título */
+    padding-bottom: 5px;
+}
+
+footer .footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer .footer-col ul li {
+    margin-bottom: 10px;
+}
+
+footer .footer-col ul li a {
+    color: #dcdcdc; /* Color claro para los enlaces */
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+footer .footer-col ul li a:hover {
+    color: #105bd5; /* Enlaces blancos al pasar el ratón */
+}
+
+footer .footer-col .social-links ul {
+    display: flex;
+    gap: 20px;
+}
+
+footer .footer-col .social-links ul li {
+    list-style: none;
+}
+
+footer .footer-col .social-links ul li a img {
+    width: 30px; /* Ajuste del tamaño de los iconos sociales */
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+footer .footer-col .social-links ul li a img:hover {
+    transform: scale(1.2); /* Efecto de zoom en los iconos al pasar el ratón */
+}
+
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(104, 91, 91, 0.5); 
+}
+
+.modal-content {
+    background-color: #fff;
+    color: #000;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.modal-content p {
+    margin-bottom: 1.5em;
+}
+
+.modal-content ul,
+.modal-content ol {
+    margin-bottom: 1.5em;
+    padding-left: 20px;
+}
+
+.modal-content h2, .modal-content h3 {
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+#modal-reclamaciones form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#modal-reclamaciones input,
+#modal-reclamaciones textarea {
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#modal-reclamaciones button {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#modal-reclamaciones button:hover {
+    background-color: #45a049;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+/* Estilos adicionales */
+.tlogo {
+    color: #5d6d7e;
+}
+
+.imagen-acerca {
+    margin-right: 150px;
+    margin-bottom: 50px;
+    padding-top: 51px;
+}
+
+.imagen-acerca img {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 1px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.205);
+    transition: box-shadow 0.3s ease;
+}
+
+.imagen-acerca img:hover {
+    box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.678);
+}
+
+/* Estilos responsivos */
+@media (max-width: 1600px) {
+    .opciones {
+        gap: 30px; /* Reducir el espacio entre las opciones en pantallas más pequeñas */
+    }
+
+    .blog {
+        margin: 20px; /* Reducir el margen en pantallas más pequeñas */
+        font-size: 18px; /* Reducir el tamaño de la fuente */
+        max-width: 90%; /* Limitar el ancho máximo del cuadro de texto */
+        width: 100%; /* Asegurar que el cuadro de texto use el 100% de su contenedor */
+        box-shadow: none; /* Opcional: eliminar la sombra en pantallas más pequeñas */
+    }
+
+    .contenido-nosotros {
+        display: flex;
+        align-items: center; /* Centrar contenido */
+        max-width: fit-content; /* Limitar ancho máximo del contenedor */
+        margin: 0 auto; /* Centrar el contenedor */
+        padding: 50px; /* Espaciado interno */
+        height: auto; /* Asegurarse de que la altura se ajuste automáticamente */
+    }
+    .consejos{
+        max-width: 93%;
+        align-items: center;
+        margin: auto;
+    }
+
+    .imagen-acerca img {
+        width: 300px;
+        height: 430px;
+        margin-top: 26px;
+        object-fit: cover;
+        border-radius: 1px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.205);
+        transition: box-shadow 0.3s ease;
+    }
+
+    .imagen-acerca img:hover {
+        box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.678);
+    }
+   
+}
+
+/* Estilos responsivos */
+
+
+@media (max-width: 1200px) {
+    .nosotros h1 {
+        font-size: 1.6rem; /* Tamaño de fuente en pantallas más pequeñas */
+    }
+
+    .nosotros p {
+        font-size: 1rem; /* Tamaño de fuente más pequeño */
+    }
+
+}
+
+@media (max-width: 1040px) {
+    .nosotros h1 {
+        font-size: 1.4rem; /* Tamaño de fuente en pantallas más pequeñas */
+    }
+
+    .nosotros p {
+        font-size: 1rem; /* Tamaño de fuente más pequeño */
+    }
+
+    .blog {
+        margin: 20px; /* Reducir el margen en pantallas más pequeñas */
+        max-width: 90%; /* Limitar el ancho máximo del cuadro de texto */
+        width: 100%; /* Asegurar que el cuadro de texto use el 100% de su contenedor */
+        box-shadow: none; /* Opcional: eliminar la sombra en pantallas más pequeñas */
+    }
+
+    .contenido-nosotros {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centrar contenido */
+        max-width: fit-content; /* Limitar ancho máximo del contenedor */
+        margin: 0 auto; /* Centrar el contenedor */
+        padding: 50px; /* Espaciado interno */
+        height: auto; /* Asegurarse de que la altura se ajuste automáticamente */
+    }
+
+    .imagen-acerca img {
+        width: 300px;
+        height: 430px;
+        margin-left: 130px;
+        margin-top: 26px;
+        object-fit: cover;
+        border-radius: 1px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.205);
+        transition: box-shadow 0.3s ease;
+    }
+
+    .imagen-acerca img:hover {
+        box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.678);
+    }
+
+    .videoblog {
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+    
+    .videoblog video {
+        width: auto;
+        height: 6in;
+        border-radius: 9px;
+    }
+
+}
+
+@media (max-width: 944px) {
+    header .opciones {
+        align-items: center;
+        font-size: 14px;
+        gap: 20px;
+    }
+    .nosotros h1 {
+        font-size: 1.2rem; /* Tamaño de fuente en pantallas más pequeñas */
+    }
+
+    .nosotros p {
+        font-size: 1.1rem; /* Tamaño de fuente más pequeño */
+    }
+    .consejos p {
+        font-size: 1.1rem; /* Tamaño de fuente más pequeño */
+    }
+    .blog {
+        margin: 30px; /* Reducir el margen en pantallas más pequeñas */
+        max-width: 90%; /* Limitar el ancho máximo del cuadro de texto */
+        width: 100%;/* Asegurar que el cuadro de texto use el 100% de su contenedor */
+        box-shadow: none; /* Opcional: eliminar la sombra en pantallas más pequeñas */
+    }
+
+    .contenido-nosotros {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centrar contenido */
+        max-width: fit-content; /* Limitar ancho máximo del contenedor */
+        margin: 0 auto; /* Centrar el contenedor */
+        padding: 50px; /* Espaciado interno */
+        height: auto; /* Asegurarse de que la altura se ajuste automáticamente */
+    }
+
+    .imagen-acerca img {
+        width: 300px;
+        height: 430px;
+        margin-left: 180px;
+        margin-top: 13px;
+        object-fit: cover;
+        border-radius: 1px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.205);
+        transition: box-shadow 0.3s ease;
+    }
+
+    .imagen-acerca img:hover {
+        box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.678);
+    }
+
+    .videoblog {
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+    
+    .videoblog video {
+        width: auto;
+        height: 6in;
+        border-radius: 9px;
+    }
+    
+    footer .footer-col {
+        width: 100%;
+        text-align: center;
+    }
+    
+    footer .row {
+        flex-direction: column;
+        align-items: center;
+    }
+    .social-links ul{
+        justify-content: center;
+    }
+
+    .textofinal{
+        text-align: center;
+    }
+}
+
+    @media (max-width: 748px) { 
+        header .opciones {
+            display: none;
+            flex-direction: column;
+            width: 20%; /* Más ancho para caber mejor en pantallas pequeñas */
+            padding: 0.5rem; /* Espacio interno */
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.729); /* Sombra */
+            border-radius: 8px; /* Bordes redondeados */
+            position: absolute;
+            top: 50px;
+            right: 10px; /* No pegado al borde */
+            z-index: 1000;
+        }
+        header .opciones a {
+            display: flex; /* Flexbox para centrar el texto */
+            justify-content: center; /* Centrar horizontalmente */
+            align-items: center; /* Centrar verticalmente */
+            text-decoration: none; /* Sin subrayados */
+            color: #333; /* Color legible */
+            border-radius: 4px; /* Bordes suaves */
+        }
+      header .hamburger {
+            display: block; /* Mostramos la hamburguesa */
+        }
+     .opciones{
+            display: flex;
+            gap: 15px;  
+        }
+    
+        .logo {
+            font-size: 1rem; /* Tamaño de fuente para el logo */
+            font-weight: bold;
+            font-family: "Matemasie";  
+        }
+    
+    
+        header .opciones li {
+            margin: 0; /* Eliminar márgenes */
+            padding: 0; /* Eliminar padding */
+        }
+    
+    
+    }
+
+
+    @keyframes pulse {
+        0% {
+            transform: scale(1); /* Tamaño normal */
+        }
+        50% {
+            transform: scale(1.2); /* Pequeño zoom */
+        }
+       100% {
+            transform: scale(1); /* Volver al tamaño normal */
+        }
+    }
+    
+    .boton_wssp {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        z-index: 1000;
+        animation: pulse 1.5s infinite; /* Aplicar la animación */
+        transition: transform 0.3s ease-in-out; /* Suavizar la transición */
+    }
+    
+    .boton_wssp a img:first-child {
+        display: block;
+    }
+    
+    .boton_wssp a img:last-child {
+        display: none;
+    }
+    
+    .boton_wssp a:hover img:first-child {
+        display: none;
+    }
+    
+    .boton_wssp a:hover img:last-child {
+        display: block;
+    }
+
+
+
+    .flechaarriba {
+        position: fixed;
+        right: 20px;    
+        bottom: 150px; 
+        display: none; /* Inicialmente oculta */
+        cursor: pointer;
+        z-index: 1000;  
+    
+        
+    }
