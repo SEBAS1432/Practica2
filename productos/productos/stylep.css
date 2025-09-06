@@ -1,0 +1,691 @@
+/* Estilos globales */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'PT Serif', serif;
+    font-weight: bold;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+main {
+    padding-top: 100px;
+    overflow: auto; /* Cambiado para permitir el desplazamiento */
+}
+
+/* Variables de colores */
+:root {
+    --color-fondo:  #efefef;
+    --color-letras: #202020;
+    --color-botones: #1c1b1b;
+    --color-titu: #595858c5;
+    --color-pre-titu: #101010ab;
+    --color-subt: #3332329f;  
+}
+
+
+/* Estilos generales */
+body {
+    background-color: var(--color-fondo); 
+    margin: 0; /* Asegúrate de que no haya margen global innecesario */
+    padding: 0; /* Asegúrate de que no haya padding global innecesario */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Encabezado */
+header {
+    background-color: #ffffff;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 4%;
+    z-index: 1000; /* Asegura que el encabezado esté por encima de otros elementos */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Añade una sombra para destacarlo */
+
+}
+
+.logo {
+    font-size: 2rem; /* Fuente raíz pr= 16 */
+    font-weight: bold;
+    font-family: "Matemasie";
+    transition: transform 0.3s;
+   
+}
+
+.logo:hover {
+    transform: scale(1.1); /* Escalar al 110% */
+    
+}
+header .hamburger {
+  
+    display: none; /* Ocultamos inicialmente */
+}
+header .opciones li a {
+    transition: transform 0.3s ease;
+    display: inline-block; 
+}
+
+header .opciones li a:hover {
+    transform:translateY(-3px);
+    border-bottom: 2px solid #000;
+}
+a {
+    color: var(--color-letras);
+}
+
+.opciones {
+    display: flex;
+    gap: 50px;
+}
+
+.opciones li a {
+    letter-spacing: 0.10em;
+    font-weight: lighter;
+
+}
+
+/* Main y contenedor de contenido */
+main {
+    padding-top: 100px;
+    overflow: hidden;
+}
+
+.content-container {
+    display: flex;
+    justify-content: center;
+  
+    box-sizing: border-box; /* Incluye padding en el ancho total */
+}
+
+section {
+    padding: 15px 4%;
+}
+
+.titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0;
+    font-weight: bold;
+    color: var(--color-pre-titu);
+    letter-spacing: 0.50em;
+    font-size: 0.8rem;
+    width: 100%; /* Asegura que el contenedor ocupe el 100% del ancho disponible */
+}
+
+button {
+    font-size: 0.8rem;
+    background-color:#e93030;
+    padding: 8px;
+    color: white;
+    letter-spacing: 0.10em;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease; 
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: auto;  /* Esto mueve solo el botón hacia la derecha */
+}
+
+button:hover {
+    transform: scale(1.1);
+    background-color: #ffffff; 
+    color: black;
+}
+
+.linea-container {
+    width: fit-content; /* Ajusta el ancho al contenido */
+    margin-bottom: 30px; /* Ajusta el espacio abajo del contenedor */
+}
+.linea-horizontal {
+    width: 100vw;
+    border: 0;
+    height: 1px; 
+    background: #d6d6d6; /* Ajusta el color de la línea */
+    border-radius: 50px;
+    margin-left: 22%; /* Ajusta el margen para centrar la línea horizontal */
+}
+
+
+
+.lista-opciones {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+}
+
+.lista-opciones h1 {
+    color: var(--color-subt);
+    font-size: 1rem;
+    letter-spacing: 0.10em;
+}
+
+.lista {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.lista li a {
+    color: #444444bf;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-weight: lighter;
+    font-size: 0.90rem;
+    transition: transform 0.3s ease; /* Añade una transición suave para el efecto */
+}
+.lista li a:hover {
+    transform: scale(1.1);
+    font-size: 1rem;
+    color: rgb(0, 0, 0);
+}
+.cont-todo{
+    width: 80%;/*para acomodar su maximo el grid*/
+    padding: 0 0;
+    box-sizing: border-box;
+    
+    
+}
+.Camisas, .Casacas, .Pantalones, .Poleras, .Polos{
+    width: 100%;
+   
+}
+
+.Camisas-contenedor, .Casacas-contenedor , .Pantalones-contenedor , .Poleras-contenedor, .Polos-contenedor{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2.5rem;
+    justify-content: center; 
+    width: 100%; 
+    box-sizing: border-box; /* Incluye padding y border en el cálculo del ancho */
+}
+.Camisa, .Casaca , .Pantalon, .Polera, .Polo{
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos estén en columna */
+    gap: 10px;
+    text-align: center;
+    width: 100%;
+}
+.Camisa img, .Casaca img, .Pantalon img,.Polera img,.Polo img{
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 2px;
+    
+}
+
+.Camisa  h2, .Casaca h2, .Pantalon h2, .Polera h2 ,.Polo h2{
+    font-weight: lighter;
+    font-size: 1.2rem;
+    letter-spacing: 0.10em;
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+    overflow: hidden; /* Oculta el desbordamiento del texto */
+    text-overflow: ellipsis; /* Muestra "..." si el texto es demasiado largo */
+    
+}
+.Camisa  p, .Casaca p, .Pantalon p, .Polera p, .Polo p{
+    font-size: 1.2rem;
+    font-weight: bold; 
+}
+
+/*accsesorios*/
+.Gorras, .Medias {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    
+}
+
+.Gorras-contenedor, .Medias-contenedor {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Cambiado de 250px a 200px */
+    gap: 2rem; /* Ajusta el gap según sea necesario */
+    justify-content: center; 
+    width: 100%; 
+    box-sizing: border-box;
+}
+
+
+
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 500px; /* Altura constante para todas las imágenes */
+    overflow: hidden;
+}
+
+
+.image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Asegura que ocupen el 100% del contenedor */
+    height: 100%; /* Asegura que ocupen el 100% del contenedor */
+    object-fit: cover; /* Mantiene la relación de aspecto y recorta si es necesario */
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 2px;
+    transition: opacity 0.3s ease; /* Transición suave */
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 500px; /* Altura constante para todas las imágenes */
+    overflow: hidden;
+}
+
+.image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Asegura que ocupen el 100% del contenedor */
+    height: 100%; /* Asegura que ocupen el 100% del contenedor */
+    object-fit: cover; /* Mantiene la relación de aspecto y recorta si es necesario */
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 2px;
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Transición suave para transformación y opacidad */
+}
+
+/* Oculta la imagen de hover por defecto */
+.image-container img.hover {
+    opacity: 0; /* Oculta la imagen de hover por defecto */
+    transform: translate(100%, -100%); /* Posiciona la imagen fuera de la esquina superior derecha */
+    z-index: 0; /* Se coloca debajo de la imagen normal */
+}
+
+/* Cambios al hacer hover en el contenedor de la imagen */
+.image-container:hover img.normal {
+    opacity: 0; /* Oculta la imagen normal al hacer hover */
+}
+
+.image-container:hover img.hover {
+    opacity: 1; /* Muestra la imagen de hover al hacer hover */
+    transform: translate(0, 0); /* La imagen se mueve a su posición original */
+    z-index: 2; /* Coloca la imagen de hover por encima */
+}
+
+.button {
+    font-size: 1rem;
+    background-color: var(--color-botones);
+    padding: 10px;
+    color: white;
+    letter-spacing: 0.10em;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease; 
+    display: inline-block;
+    margin-top: 10px; 
+}
+
+
+.button:hover {
+    transform: scale(1.1);
+    background-color: #ffffff; 
+    color: black;
+}
+
+/* Pie de página */
+/* Estilos para el footer */
+/* Estilos del footer */
+footer {
+    background-color: var(--color-botones);
+    padding: 50px 0;
+    color: #fff;
+    font-family: 'PT Serif', serif;
+    margin-top: auto;
+}
+
+footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer .row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+footer .footer-col {
+    width: 22%;
+    margin-bottom: 30px;
+}
+
+footer .footer-col h4 {
+    font-size: 18px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    font-weight: bold;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 5px;
+}
+
+footer .footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer .footer-col ul li {
+    margin-bottom: 10px;
+}
+
+footer .footer-col ul li a {
+    color: #dcdcdc;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+footer .footer-col ul li a:hover {
+    color: #ffffff;
+}
+
+footer .footer-col .social-links ul {
+    display: flex;
+    gap: 20px;
+}
+
+footer .footer-col .social-links ul li {
+    list-style: none;
+}
+
+footer .footer-col .social-links ul li a img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+footer .footer-col .social-links ul li a img:hover {
+    transform: scale(1.2);
+    
+}
+
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(104, 91, 91, 0.5); 
+}
+
+.modal-content {
+    background-color: #fff;
+    color: #000;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.modal-content p {
+    margin-bottom: 1.5em;
+}
+
+.modal-content ul,
+.modal-content ol {
+    margin-bottom: 1.5em;
+    padding-left: 20px;
+}
+
+.modal-content h2, .modal-content h3 {
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+#modal-reclamaciones form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#modal-reclamaciones input,
+#modal-reclamaciones textarea {
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#modal-reclamaciones button {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#modal-reclamaciones button:hover {
+    background-color: #45a049;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+@media (max-width: 1187px) {
+
+    .Gorras-contenedor, .Medias-contenedor {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajuste aquí para pantallas más pequeñas */
+        gap: 1rem; /* Ajusta el espacio entre elementos */
+    }
+
+    .image-container {
+        height: 300px; /* Ajusta la altura para pantallas medianas */
+    }
+    .Camisas-contenedor, .Casacas-contenedor , .Pantalones-contenedor , .Poleras-contenedor, .Polos-contenedor{
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajuste aquí para pantallas más pequeñas */
+        gap: 1rem; /* Ajusta el espacio entre elementos */
+    }
+}
+
+
+
+
+@media (max-width: 944px) {
+    header .opciones {
+        display: none;
+        flex-direction: column;
+        width: 20%; /* Más ancho para caber mejor en pantallas pequeñas */
+        padding: 0.5rem; /* Espacio interno */
+        background-color: #ffffff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.729); /* Sombra */
+        border-radius: 8px; /* Bordes redondeados */
+        position: absolute;
+        align-items: center; /* Centra las opciones verticalmente */
+        top: 50px;
+        right: 10px; /* No pegado al borde */
+        z-index: 1000;
+    }
+    header .opciones a {
+        display: flex; /* Flexbox para centrar el texto */
+        justify-content: center; /* Centrar horizontalmente */
+        align-items: center; /* Centrar verticalmente */
+        text-decoration: none; /* Sin subrayados */
+        color: #333; /* Color legible */
+        border-radius: 4px; /* Bordes suaves */
+    }
+  header .hamburger {
+        display: block; /* Mostramos la hamburguesa */
+    }
+ .opciones{
+        display: flex;
+        gap: 15px;  
+    }
+    .logo {
+        font-size: 1.5rem; /* fuente raíz es 16 */
+        font-weight: bold;
+        font-family: "Matemasie";  
+    }
+    .Gorras-contenedor, .Medias-contenedor {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Ajustado de 250px a 200px */
+        gap: 1rem;
+    }
+
+    .image-container {
+        height: 300px; /* Ajusta la altura para pantallas medianas */
+    }
+    .Camisas-contenedor, .Casacas-contenedor , .Pantalones-contenedor , .Poleras-contenedor, .Polos-contenedor{
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Ajustado de 250px a 200px */
+        gap: 1rem;
+    }
+     
+    footer .footer-col {
+        width: 100%;
+        text-align: center;
+        
+    }
+    
+    footer .row {
+        flex-direction: column;
+        align-items: center;
+    }
+    .social-links ul{
+        justify-content: center;
+    }
+
+    .textofinal{
+        text-align: center;
+    }
+
+}
+
+
+
+
+@media (max-width: 748px) { 
+    header .opciones {
+        display: none;
+        flex-direction: column;
+        width: 20%; /* Más ancho para caber mejor en pantallas pequeñas */
+        padding: 0.5rem; /* Espacio interno */
+        background-color: #ffffff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.729); /* Sombra */
+        border-radius: 8px; /* Bordes redondeados */
+        position: absolute;
+        align-items: center; /* Centra las opciones verticalmente */
+        top: 50px;
+        right: 10px; /* No pegado al borde */
+        z-index: 1000;
+    }
+    header .opciones a {
+        display: flex; /* Flexbox para centrar el texto */
+        justify-content: center; /* Centrar horizontalmente */
+        align-items: center; /* Centrar verticalmente */
+        text-decoration: none; /* Sin subrayados */
+        color: #333; /* Color legible */
+        border-radius: 4px; /* Bordes suaves */
+    }
+  header .hamburger {
+        display: block; /* Mostramos la hamburguesa */
+    }
+ .opciones{
+        display: flex;
+        gap: 15px;  
+    }
+
+    .logo {
+        font-size: 1rem; /* Tamaño de fuente para el logo */
+        font-weight: bold;
+        font-family: "Matemasie";  
+    }
+
+
+    header .opciones li {
+        margin: 0; /* Eliminar márgenes */
+        padding: 0; /* Eliminar padding */
+    }
+
+    
+    .Gorras-contenedor, .Medias-contenedor {
+        display: grid;
+        grid-template-columns: 1fr; /* Solo una columna en móviles */
+        gap: 0.5rem;
+    }
+
+    .image-container {
+        height: 400px; /* Ajusta la altura para pantallas pequeñas */
+    }
+    .Camisas-contenedor, .Casacas-contenedor , .Pantalones-contenedor , .Poleras-contenedor, .Polos-contenedor{
+        display: grid;
+        grid-template-columns: 1fr; /* Solo una columna en móviles */
+        gap: 0.5rem;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1); /* Tamaño normal */
+    }
+    50% {
+        transform: scale(1.2); /* Pequeño zoom */
+    }
+    100% {
+        transform: scale(1); /* Volver al tamaño normal */
+    }
+}
+
+.boton_wssp {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1000;
+    animation: pulse 1.5s infinite; /* Aplicar la animación */
+    transition: transform 0.3s ease-in-out; /* Suavizar la transición */
+}
+
+.boton_wssp a img:first-child {
+    display: block;
+}
+
+.boton_wssp a img:last-child {
+    display: none;
+}
+
+.boton_wssp a:hover img:first-child {
+    display: none;
+}
+
+.boton_wssp a:hover img:last-child {
+    display: block;
+}
+
+.flechaarriba {
+    position: fixed;
+    right: 20px;    
+    bottom: 150px; 
+    display: none; /* Inicialmente oculta */
+    cursor: pointer;
+    z-index: 1000;  
+
+    
+}
